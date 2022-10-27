@@ -9,6 +9,27 @@ class DataTableWidget extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: StudentData.bodyData(),
+
+        // DataTable correct way
+        // DataTable(columns: [
+        //   DataColumn(label: Text("Name"), numeric: true),
+        //   DataColumn(label: Text("Age")),
+        //   DataColumn(label: Text("Gender")),
+        //   DataColumn(label: Text("School")),
+        // ], rows: [
+        //   DataRow(cells: [
+        //     DataCell(Text("Sadman")),
+        //     DataCell(Text("40")),
+        //     DataCell(Text("Male")),
+        //     DataCell(Text(schoolName)),
+        //   ]),
+        //   DataRow(cells: [
+        //     DataCell(Text("Ichha")),
+        //     DataCell(Text("35")),
+        //     DataCell(Text("Male")),
+        //     DataCell(Text(schoolName)),
+        //   ]),
+        // ]),
       ),
     );
   }
@@ -27,7 +48,7 @@ class StudentData {
       required this.gender,
       this.schoolName = "ABC School"});
 
-  //Constructors end..    
+  //Constructors end..
 
   static Widget bodyData() {
     List<StudentData> names = [
