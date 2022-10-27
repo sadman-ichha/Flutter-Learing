@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'widgets/data_table.dart';
+
+import 'widgets/Navigation_Rail/navigation_rail.dart';
 
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: DataTableWidget(),
+      home: NavigationRaliWidgets(),
     );
   }
 }
