@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'another_page.dart';
 
 class DataPassByConstructor extends StatelessWidget {
-  String name = "We learn Flutter" ;
-  
+  String _stringData = "We learn Flutter";
+  int age=20;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +32,7 @@ class DataPassByConstructor extends StatelessWidget {
         onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (BuildContext context) => AnotherPage(name))),
+                builder: (BuildContext context) => AnotherPage(age, catchData:_stringData ))),
       ),
     ));
   }

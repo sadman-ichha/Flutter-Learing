@@ -3,9 +3,12 @@
 import 'package:flutter/material.dart';
 
 class AnotherPage extends StatelessWidget {
-  String catchData;
-  AnotherPage(this.catchData) {
-    print("fatch Data");
+  String? catchData;
+  int? age;
+  //optional perameter with name perameter constructor
+  AnotherPage(this.age, {required this.catchData}) {
+    print('First');
+    print('End');
   }
 
   @override
@@ -20,6 +23,20 @@ class AnotherPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(
+              catchData!,
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black),
+            ),
+            Text(
+              age.toString(),
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black),
+            ),
             SizedBox(height: 20.0),
             ElevatedButton(
                 onPressed: () => Navigator.pop(context), child: Text("Back")),
