@@ -1,15 +1,26 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class AnotherPage extends StatelessWidget {
-  String? catchData;
+  String? message;
   int? age;
-  //optional perameter with name perameter constructor
-  AnotherPage(this.age, {required this.catchData}) {
-    print('First');
-    print('End');
+
+  //optional perameter & name perameter  with multiline constructor
+  AnotherPage(BuildContext context, String text, {required int agess}) {
+    message = text;
+    age = agess;
+    // Fluttertoast.showToast(msg: "Passing data via Constructor");
+
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text("Passing data via Constructor"),
+      action: SnackBarAction(label: "label", onPressed: () {}),
+    ));
   }
+
+  //optional perameter & name perameter  with oneLine constructor
+  // AnotherPage(this.age, {required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +34,11 @@ class AnotherPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              catchData!,
-              style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black),
-            ),
+            Text(message!,
+                style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black)),
             Text(
               age.toString(),
               style: TextStyle(
