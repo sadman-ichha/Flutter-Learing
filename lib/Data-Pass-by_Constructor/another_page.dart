@@ -8,15 +8,11 @@ class AnotherPage extends StatelessWidget {
   int? age;
 
   //optional perameter & name perameter  with multiline constructor
-  AnotherPage(BuildContext context, String text, {required int agess}) {
+
+  AnotherPage(context, String text, {required int agess}) {
     message = text;
     age = agess;
-    // Fluttertoast.showToast(msg: "Passing data via Constructor");
-
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text("Passing data via Constructor"),
-      action: SnackBarAction(label: "label", onPressed: () {}),
-    ));
+    Fluttertoast.showToast(msg: "Passing data via Constructor");
   }
 
   //optional perameter & name perameter  with oneLine constructor
