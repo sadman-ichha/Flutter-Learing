@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'Data-Pass-by_Constructor/data_pass_by_constructor.dart';
+import 'animated_rive.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: DataPassByConstructor(),
+      home: RiveAnimated(),
     );
   }
 }
