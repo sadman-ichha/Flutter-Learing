@@ -15,7 +15,7 @@ class RiveAnimated extends StatelessWidget {
             width: 300.0,
             child: RiveAnimation.asset(
               "assets/animation/mixing-animations.riv",
-              animations: ["Expert", "Beginner", 'Intermediate'],
+              animations: ["Expert", "Beginner",'Intermediate'],
             )),
       ),
     );
