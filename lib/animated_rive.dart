@@ -11,12 +11,13 @@ class RiveAnimated extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
-            height: 400.0,
-            width: 300.0,
-            child: RiveAnimation.asset(
-              "assets/animation/mixing-animations.riv",
-              animations: ["Expert","Beginner",'Intermediate'],
-            )),
+          height: 400.0,
+          width: 300.0,
+          child: RiveAnimation.asset(
+            "assets/animation/mixing-animations.riv",
+            animations: ["Expert", "Beginner", 'Intermediate'],
+          ),
+        ),
       ),
     );
   }
