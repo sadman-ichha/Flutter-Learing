@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 class UrlLauncher extends StatelessWidget {
   final Uri googleUrl = Uri.parse('https://www.google.com/');

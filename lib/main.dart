@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'url_launcher.dart';
+import 'packages/url_launcher.dart';
 
 void main() {
   runApp(MyApp());
