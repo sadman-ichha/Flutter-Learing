@@ -32,6 +32,7 @@ dependencies:
   image_picker: ^0.8.6  
   fluttertoast: ^8.1.1
   rive: ^0.9.1
+  url_launcher: ^6.1.6
 
 
   # The following adds the Cupertino Icons font to your application.
