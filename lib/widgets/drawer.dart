@@ -1,5 +1,4 @@
-// ignore_for_file: prefer_const_constructors
-
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 
 class DrawerWidget extends StatefulWidget {
@@ -16,12 +15,31 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       child: Scaffold(
         key: _globalKey,
         drawer: Drawer(
-          backgroundColor: Colors.purpleAccent,
+          backgroundColor: Colors.grey[50],
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
             topRight: Radius.circular(30.0),
             bottomRight: Radius.circular(30.0),
           )),
+          child: ListView(
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(color: Colors.grey),
+                child: Center(
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundImage: NetworkImage(
+                        "https://images.unsplash.com/photo-1661961110372-8a7682543120?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"),
+                  ),
+                ),
+              ),
+              Text("Sadman"),
+              Container(
+                height: 300,
+                color: Colors.amber,
+              )
+            ],
+          ),
         ),
         appBar: AppBar(
           title: Text("Drawer"),
