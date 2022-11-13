@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'packages/url_launcher.dart';
+import 'packages/quick_alert.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: UrlLauncher(),
+      home: QuickAlertPackages(),
     );
   }
 }
