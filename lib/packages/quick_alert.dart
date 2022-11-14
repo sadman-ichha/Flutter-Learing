@@ -103,6 +103,40 @@ class QuickAlertPackages extends StatelessWidget {
                   text: 'Fetching your data',
                 );
               }),
+          SizedBox(height: 10),
+          customButtom(
+              title: Text("Custom Alert"),
+              text: "Phone Number",
+              onTap: () {
+                var message = '';
+                QuickAlert.show(
+                    context: context,
+                    type: QuickAlertType.custom,
+                    barrierDismissible: true,
+                    confirmBtnText: 'Save',
+                    customAsset: "assets/images/images.jpg",
+                    widget: TextFormField(
+                      decoration: const InputDecoration(
+                        alignLabelWithHint: true,
+                        hintText: 'Enter Phone Number',
+                        prefixIcon: Icon(
+                          Icons.phone_outlined,
+                        ),
+                      ),
+                      textInputAction: TextInputAction.next,
+                      keyboardType: TextInputType.phone,
+                      onChanged: (value) => message = value,
+                    ),
+                    onConfirmBtnTap: () async {
+                      if (message.length < 5) {
+                        await QuickAlert.show(
+                          context: context,
+                          type: QuickAlertType.error,
+                          text: 'Please input something',
+                        );
+                      }
+                    });
+              })
         ],
       ),
     );
