@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_pratice/TextForm_Validation/next_page.dart';
-import 'package:email_validator/email_validator.dart';
 
 class TextFormValidation extends StatefulWidget {
   @override
