@@ -2,9 +2,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_pratice/TextForm_Validation/next_page.dart';
+import 'package:email_validator/email_validator.dart';
 
-class TextFormValidation extends StatelessWidget {
+class TextFormValidation extends StatefulWidget {
+  @override
+  State<TextFormValidation> createState() => _TextFormValidationState();
+}
+
+class _TextFormValidationState extends State<TextFormValidation> {
   final _formlKey = GlobalKey<FormState>();
+
+  TextEditingController _emailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,8 +31,10 @@ class TextFormValidation extends StatelessWidget {
           child: Column(
             children: [
               TextFormField(
+                keyboardType: TextInputType.name,
                 decoration: InputDecoration(
                   hintText: "Enter your Name?",
+                  prefixIcon: Icon(Icons.person),
                   hintStyle: Theme.of(context).textTheme.bodyMedium,
                 ),
                 validator: (value) {
@@ -33,21 +44,40 @@ class TextFormValidation extends StatelessWidget {
                 },
               ),
               TextFormField(
+                controller: _emailController,
+                keyboardType: TextInputType.emailAddress,
+                autofillHints: [AutofillHints.email],
                 decoration: InputDecoration(
                     hintText: "Enter your Email?",
+                    prefixIcon: Icon(Icons.email_outlined),
+                    suffixIcon: _emailController.text.isEmpty
+                        ? Container(width: 0)
+                        : IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _emailController.clear();
+                              });
+                            },
+                            icon: Icon(Icons.close),
+                            color: Colors.red,
+                          ),
                     hintStyle: Theme.of(context).textTheme.bodyMedium),
-                validator: (value) {
-                  if (value!.isEmpty) {
+                validator: (email) {
+                  if (email!.isEmpty) {
                     return "this field can't be empty";
-                  } else if (value.length < 3) {
-                    return "enter a validate email";
+                  } else if (!RegExp(
+                          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                      .hasMatch(email)) {
+                    return "Plase Valid email";
                   }
                 },
               ),
               TextFormField(
+                keyboardType: TextInputType.text,
                 obscureText: true,
                 decoration: InputDecoration(
                     hintText: "Enter your Password!",
+                    prefixIcon: Icon(Icons.password_outlined),
                     hintStyle: Theme.of(context).textTheme.bodyMedium),
                 validator: (value) {
                   if (value!.isEmpty) {
@@ -63,8 +93,17 @@ class TextFormValidation extends StatelessWidget {
                   child: ElevatedButton(
                       onPressed: () {
                         if (_formlKey.currentState!.validate()) {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => NextPage()));
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text("Succuess")));
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => NextPage(),
+                            ),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text("Unsuccuess")));
                         }
                       },
                       child: Text("Validate Now"))),
