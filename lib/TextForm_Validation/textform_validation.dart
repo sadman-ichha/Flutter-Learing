@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_final_fields, prefer_const_constructors, unused_field, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_pratice/TextForm_Validation/next_page.dart';
 
 class TextFormValidation extends StatelessWidget {
   final _formlKey = GlobalKey<FormState>();
@@ -44,6 +45,7 @@ class TextFormValidation extends StatelessWidget {
                 },
               ),
               TextFormField(
+                obscureText: true,
                 decoration: InputDecoration(
                     hintText: "Enter your Password!",
                     hintStyle: Theme.of(context).textTheme.bodyMedium),
@@ -60,7 +62,10 @@ class TextFormValidation extends StatelessWidget {
                   width: 300.0,
                   child: ElevatedButton(
                       onPressed: () {
-                        _formlKey.currentState!.validate();
+                        if (_formlKey.currentState!.validate()) {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) => NextPage()));
+                        }
                       },
                       child: Text("Validate Now"))),
             ],
