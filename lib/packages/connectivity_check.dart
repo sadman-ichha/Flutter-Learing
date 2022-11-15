@@ -1,9 +1,16 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 
-class ConnectivityCheck extends StatelessWidget {
+class ConnectivityCheck extends StatefulWidget {
+  @override
+  State<ConnectivityCheck> createState() => _ConnectivityCheckState();
+}
+
+class _ConnectivityCheckState extends State<ConnectivityCheck> {
   StreamSubscription? subscription;
 
   Future checkConnection(context) async {
@@ -19,6 +26,20 @@ class ConnectivityCheck extends StatelessWidget {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text("No Internet")));
     }
+  }
+
+  @override
+  void initState() {
+    subscription = Connectivity().onConnectivityChanged.listen((event) {
+      checkConnection(context);
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    subscription!.cancel();
+    super.dispose();
   }
 
   @override
