@@ -1,10 +1,17 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'packages/connectivity_check.dart';
+import 'package:flutter_pratice/provider/eligibility_provider_screen.dart';
+import 'package:provider/provider.dart';
+import 'provider/eligibility_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (BuildContext context) => EligibilityProviderScreen(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -14,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ConnectivityCheck(),
+      home: EligibilityScreen(),
     );
   }
 }
