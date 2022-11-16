@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'eligibility_provider_screen.dart';
 
 class EligibilityScreen extends StatelessWidget {
-  const EligibilityScreen({Key? key}) : super(key: key);
+  TextEditingController _ageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +23,26 @@ class EligibilityScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircleAvatar(),
-            TextField(),
+            CircleAvatar(
+                backgroundColor:
+                    providerData.value ? Colors.green : Colors.red),
+            TextFormField(
+              controller: _ageController,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(hintText: "Give your age"),
+            ),
             SizedBox(height: 20.0),
             SizedBox(
-              width: 300.0,
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Text("Check"),
-              ),
-            ),
+                width: 300.0,
+                child: ElevatedButton(
+                  onPressed: () {
+                    final int userAge = int.parse(_ageController.text.trim());
+                    providerData.checkEligibility(userAge);
+                  },
+                  child: Text("Check"),
+                )),
+            SizedBox(height: 17.0),
+            Text(providerData.message),
           ],
         ),
       ),
