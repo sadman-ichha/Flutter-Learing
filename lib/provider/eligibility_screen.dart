@@ -18,20 +18,20 @@ class EligibilityScreen extends StatelessWidget {
         elevation: 9,
         backgroundColor: Colors.white,
       ),
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.only(right: 30.0, left: 30.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              providerData.value.toString(),
-              style: TextStyle(fontSize: 30),
-            ),
+            CircleAvatar(),
+            TextField(),
             SizedBox(height: 20.0),
-            ElevatedButton(
-              onPressed: () {
-                providerData.increment();
-              },
-              child: Text("Increment"),
+            SizedBox(
+              width: 300.0,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text("Check"),
+              ),
             ),
           ],
         ),
