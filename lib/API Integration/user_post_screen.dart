@@ -2,11 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pratice/API%20Integration/helper/posts_helper.dart';
 import 'package:flutter_pratice/API%20Integration/model/posts.dart';
 
-class UserPostScreen extends StatelessWidget {
+class UserPostScreen extends StatefulWidget {
+  @override
+  State<UserPostScreen> createState() => _UserPostScreenState();
+}
+
+class _UserPostScreenState extends State<UserPostScreen> {
   List<Posts>? post;
 
   getData() async {
     var posts = await PostHelper().getPosts();
+  }
+
+  @override
+  void initState() {
+    getData();
+    super.initState();
   }
 
   @override

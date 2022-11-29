@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pratice/provider/eligibility_provider_screen.dart';
 import 'package:provider/provider.dart';
 import 'API Integration/user_post_screen.dart';
-import 'provider/eligibility_screen.dart';
 
 void main() {
   runApp(
