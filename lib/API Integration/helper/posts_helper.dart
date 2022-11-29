@@ -5,5 +5,9 @@ class PostHelper {
   Future<List<Posts>?> getPosts() async {
     var response =
         await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
+
+        if(response.statusCode==200){
+          
+        }
   }
 }
