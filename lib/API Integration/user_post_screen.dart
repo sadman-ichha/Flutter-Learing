@@ -7,6 +7,7 @@ class UserPostScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
+      body: ListView.builder(itemCount:  ,itemBuilder: itemBuilder),
     );
   }
 }

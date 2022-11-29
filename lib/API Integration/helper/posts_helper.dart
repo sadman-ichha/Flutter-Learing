@@ -6,8 +6,9 @@ class PostHelper {
     var response =
         await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
 
-        if(response.statusCode==200){
-          
-        }
+    if (response.statusCode == 200) {
+      var json = response.body;
+      return postsFromJson(json);
+    }
   }
 }
