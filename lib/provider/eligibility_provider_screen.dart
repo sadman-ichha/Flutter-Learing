@@ -5,7 +5,7 @@ class EligibilityProviderScreen extends ChangeNotifier {
   bool value = false;
   String message = "You have not given any input";
 
-  checkEligibility(int age) {
+  void checkEligibility(int age) {
     if (age >= 18) {
       //your are eligibility
       value = true;
