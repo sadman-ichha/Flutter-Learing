@@ -10,18 +10,16 @@ class PostDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
-          children: [
-            Text("User Id: ${userId.toString()}",
-                style: TextStyle(fontSize: 25)),
-            SizedBox(height: 10),
-            Text("Id: ${id.toString()}", style: TextStyle(fontSize: 25)),
-            SizedBox(height: 10),
-            Text("Body: ${body.toString()}", style: TextStyle(fontSize: 25)),
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(),
+      body: Column(
+        children: [
+          Text("User Id: ${userId.toString()}", style: TextStyle(fontSize: 25)),
+          SizedBox(height: 10),
+          Text("Id: ${id.toString()}", style: TextStyle(fontSize: 25)),
+          SizedBox(height: 10),
+          Text("Body: ${body.toString()}", style: TextStyle(fontSize: 25)),
+        ],
       ),
     );
   }

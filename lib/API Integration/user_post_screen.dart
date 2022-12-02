@@ -14,18 +14,18 @@ class _UserPostScreenState extends State<UserPostScreen> {
   List<Posts>? post = [];
   bool isVisible = false;
 
-  void getData() async {
+  getData() async {
     post = await PostHelper().getPosts();
     setState(() {
       isVisible = true;
     });
   }
 
-  @override
-  void initState() {
-    getData();
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   getData();
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -34,16 +34,23 @@ class _UserPostScreenState extends State<UserPostScreen> {
         title: Text("Post Title"),
         centerTitle: true,
       ),
-      body: ListView.builder(
-          itemCount: post!.length,
-          itemBuilder: (_, index) {
-            return Visibility(
-              visible: isVisible,
-              replacement: CircularProgressIndicator(),
-              child: Card(
+      body: Visibility(
+        visible: isVisible,
+        replacement: Center(
+            child: ElevatedButton(
+          onPressed: () {
+            getData();
+          },
+          child: Text("api call"),
+        )),
+        child: ListView.builder(
+            itemCount: post!.length,
+            itemBuilder: (_, index) {
+              return Card(
                 elevation: 5,
                 child: ListTile(
                   title: Text(post![index].title.toString()),
+                  leading: Text("$index"),
                   onTap: () {
                     Navigator.push(
                       context,
@@ -57,9 +64,9 @@ class _UserPostScreenState extends State<UserPostScreen> {
                     );
                   },
                 ),
-              ),
-            );
-          }),
+              );
+            }),
+      ),
     );
   }
 }
