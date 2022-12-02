@@ -34,6 +34,9 @@ class _UserPostScreenState extends State<UserPostScreen> {
               elevation: 5,
               child: ListTile(
                 title: Text(post![index].title.toString()),
+                onTap: () {
+                  
+                },
               ),
             );
           }),
