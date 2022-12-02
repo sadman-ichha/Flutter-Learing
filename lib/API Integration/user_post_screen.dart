@@ -8,7 +8,7 @@ class UserPostScreen extends StatefulWidget {
 }
 
 class _UserPostScreenState extends State<UserPostScreen> {
-  List<Posts>? post;
+  List<Posts>? post = [];
 
   getData() async {
     post = await PostHelper().getPosts();
