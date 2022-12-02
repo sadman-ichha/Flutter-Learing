@@ -19,7 +19,7 @@ class PostDetailsScreen extends StatelessWidget {
             SizedBox(height: 10),
             Text("Id: ${id.toString()}", style: TextStyle(fontSize: 25)),
             SizedBox(height: 10),
-            Text("Id: ${body.toString()}", style: TextStyle(fontSize: 25)),
+            Text("Body: ${body.toString()}", style: TextStyle(fontSize: 25)),
           ],
         ),
       ),
