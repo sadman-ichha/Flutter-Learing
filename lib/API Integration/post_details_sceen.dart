@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class PostDetailsScreen extends StatelessWidget {
@@ -12,10 +14,9 @@ class PostDetailsScreen extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
-            Text(
-              "Id : ${userId.toString()}",
-              style: TextStyle(fontSize: 2),
-            ),
+            Text("User Id :${userId.toString()}", style: TextStyle(fontSize: 25)),
+            SizedBox(height: 10),
+            Text("")
           ],
         ),
       ),
