@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pratice/API%20Integration/helper/posts_helper.dart';
 import 'package:flutter_pratice/API%20Integration/model/posts.dart';
+import 'package:flutter_pratice/API%20Integration/post_details_sceen.dart';
 
 class UserPostScreen extends StatefulWidget {
   @override
@@ -35,7 +36,8 @@ class _UserPostScreenState extends State<UserPostScreen> {
               child: ListTile(
                 title: Text(post![index].title.toString()),
                 onTap: () {
-                  
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => PostDetailsScreen()));
                 },
               ),
             );
