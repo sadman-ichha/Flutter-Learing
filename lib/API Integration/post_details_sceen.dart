@@ -1,4 +1,4 @@
-import 'dart:html';
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
@@ -14,9 +14,12 @@ class PostDetailsScreen extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
-            Text("User Id :${userId.toString()}", style: TextStyle(fontSize: 25)),
+            Text("User Id: ${userId.toString()}",
+                style: TextStyle(fontSize: 25)),
             SizedBox(height: 10),
-            Text("")
+            Text("Id: ${id.toString()}", style: TextStyle(fontSize: 25)),
+            SizedBox(height: 10),
+            Text("Id: ${body.toString()}", style: TextStyle(fontSize: 25)),
           ],
         ),
       ),
