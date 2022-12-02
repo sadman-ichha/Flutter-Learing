@@ -24,12 +24,14 @@ class _UserPostScreenState extends State<UserPostScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Http"),centerTitle: true,
+        title: Text("Https"),
+        centerTitle: true,
       ),
       body: ListView.builder(
           itemCount: post!.length,
           itemBuilder: (_, index) {
-            return Card(elevation: 5,
+            return Card(
+              elevation: 5,
               child: ListTile(
                 title: Text(post![index].title.toString()),
               ),
