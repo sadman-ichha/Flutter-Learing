@@ -25,7 +25,7 @@ class _UserPostScreenState extends State<UserPostScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Https"),
+        title: Text("Post Title"),
         centerTitle: true,
       ),
       body: ListView.builder(
