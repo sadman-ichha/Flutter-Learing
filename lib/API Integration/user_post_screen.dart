@@ -39,8 +39,8 @@ class _UserPostScreenState extends State<UserPostScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) =>
-                          PostDetailsScreen(post![index].userId, id, body),
+                      builder: (_) => PostDetailsScreen(post![index].userId,
+                          post![index].id, post![index].body),
                     ),
                   );
                 },
