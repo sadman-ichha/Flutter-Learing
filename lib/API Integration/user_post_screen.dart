@@ -14,7 +14,7 @@ class _UserPostScreenState extends State<UserPostScreen> {
   List<Posts>? post = [];
   bool isVisible = false;
 
-  getData() async {
+  void getData() async {
     post = await PostHelper().getPosts();
     setState(() {
       isVisible = true;
