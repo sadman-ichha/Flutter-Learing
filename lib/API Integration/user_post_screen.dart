@@ -36,8 +36,13 @@ class _UserPostScreenState extends State<UserPostScreen> {
               child: ListTile(
                 title: Text(post![index].title.toString()),
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => PostDetailsScreen()));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          PostDetailsScreen(post![index].userId, id, body),
+                    ),
+                  );
                 },
               ),
             );

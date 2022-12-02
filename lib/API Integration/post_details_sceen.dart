@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class PostDetailsScreen extends StatelessWidget {
-  const PostDetailsScreen({super.key});
+  int? userId;
+  int? id;
+  String? body;
+  PostDetailsScreen(this.userId,this.id,this.body);
 
   @override
   Widget build(BuildContext context) {
