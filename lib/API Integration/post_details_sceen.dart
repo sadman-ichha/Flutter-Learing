@@ -8,11 +8,16 @@ class PostDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Text(userId.toString()),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: [
+            Text(
+              "Id : ${userId.toString()}",
+              style: TextStyle(fontSize: 2),
+            ),
+          ],
+        ),
       ),
     );
   }
