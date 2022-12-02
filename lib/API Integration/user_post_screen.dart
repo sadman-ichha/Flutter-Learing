@@ -11,7 +11,7 @@ class _UserPostScreenState extends State<UserPostScreen> {
   List<Posts>? post;
 
   getData() async {
-    var posts = await PostHelper().getPosts();
+    post = await PostHelper().getPosts();
   }
 
   @override
