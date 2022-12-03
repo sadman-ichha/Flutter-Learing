@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors, use_build_context_synchronously
 import 'package:flutter/material.dart';
 import 'package:flutter_pratice/API%20Integration/helper/posts_helper.dart';
-
-import 'home_screen.dart';
 import 'model/posts.dart';
 import 'post_details_sceen.dart';
 
@@ -12,7 +10,7 @@ class UserPostScreen extends StatefulWidget {
 }
 
 class _UserPostScreenState extends State<UserPostScreen> {
-  List<Posts>? post = [];
+  List<Posts>? post;
   bool isVisible = false;
 
   getData() async {
@@ -41,7 +39,7 @@ class _UserPostScreenState extends State<UserPostScreen> {
           child: CircularProgressIndicator(),
         ),
         child: ListView.builder(
-            itemCount: post!.length,
+            itemCount: post?.length ?? 0,
             itemBuilder: (_, index) {
               return Card(
                 elevation: 5,
