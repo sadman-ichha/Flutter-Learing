@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
+import 'post_details_sceen.dart';
 
 class ApiHomeScreen extends StatelessWidget {
-  const ApiHomeScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {},
-          child: Text("Call Api"),
-        ),
-      ),
+     body: Container(color: Colors.amber,),
     );
   }
 }

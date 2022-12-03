@@ -1,9 +1,11 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
 import 'package:flutter_pratice/API%20Integration/helper/posts_helper.dart';
-import 'package:flutter_pratice/API%20Integration/model/posts.dart';
-import 'package:flutter_pratice/API%20Integration/post_details_sceen.dart';
+
+import 'home_screen.dart';
+import 'model/posts.dart';
+import 'post_details_sceen.dart';
 
 class UserPostScreen extends StatefulWidget {
   @override
@@ -11,7 +13,7 @@ class UserPostScreen extends StatefulWidget {
 }
 
 class _UserPostScreenState extends State<UserPostScreen> {
-  List<Posts>? post = [];
+  List<Posts>? post =[];
   bool isVisible = false;
 
   getData() async {
@@ -21,11 +23,11 @@ class _UserPostScreenState extends State<UserPostScreen> {
     });
   }
 
-  // @override
-  // void initState() {
-  //   getData();
-  //   super.initState();
-  // }
+  @override
+  void initState() {
+    getData();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,12 +39,8 @@ class _UserPostScreenState extends State<UserPostScreen> {
       body: Visibility(
         visible: isVisible,
         replacement: Center(
-            child: ElevatedButton(
-          onPressed: () {
-            getData();
-          },
-          child: Text("api call"),
-        )),
+          child: CircularProgressIndicator(),
+        ),
         child: ListView.builder(
             itemCount: post!.length,
             itemBuilder: (_, index) {
