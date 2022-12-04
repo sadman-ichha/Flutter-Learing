@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_pratice/API%20Integration/user_post_screen.dart';
 import 'package:flutter_pratice/provider/eligibility_provider_screen.dart';
 import 'package:provider/provider.dart';
+import 'ui/views/splash_screen.dart';
 
 void main() {
   runApp(
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: UserPostScreen(),
+      home: SplashScreen(),
     );
   }
 }
