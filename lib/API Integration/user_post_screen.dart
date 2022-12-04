@@ -30,7 +30,7 @@ class _UserPostScreenState extends State<UserPostScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Post Title"),
+        title: Text("PostTitle"),
         centerTitle: true,
       ),
       body: Visibility(
