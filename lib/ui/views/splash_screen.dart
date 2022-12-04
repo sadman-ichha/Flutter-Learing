@@ -10,8 +10,11 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-         FaIcon(Icons.lock),
+         Center(child: FaIcon(Icons.lock)),
+         
         ],
       ),
     );
