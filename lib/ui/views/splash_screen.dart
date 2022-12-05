@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-         Center(child: FaIcon(Icons.lock)),
+        
          
         ],
       ),
