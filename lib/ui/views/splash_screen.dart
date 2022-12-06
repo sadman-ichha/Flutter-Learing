@@ -9,10 +9,20 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage('assets/images/splash.jpg'),fit: BoxFit.cover),
-      )),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/splash.jpg'), fit: BoxFit.cover),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Flutter Practice",
+                  style: TextStyle(fontSize: 50, color: Colors.white)),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
