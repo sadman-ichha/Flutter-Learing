@@ -38,7 +38,9 @@ class _SharedPreferencesDemoState extends State<SharedPreferencesDemo> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  increment();
+                },
                 child: Text("+"),
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
