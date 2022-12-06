@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_pratice/provider/eligibility_provider_screen.dart';
+import 'package:flutter_pratice/shared%20preferences/shared_pref_demo.dart';
 import 'package:provider/provider.dart';
-import 'ui/views/splash_screen.dart';
 
 void main() {
   runApp(
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: SharedPreferencesDemo(),
     );
   }
 }
