@@ -19,6 +19,14 @@ class _SharedPreferencesDemoState extends State<SharedPreferencesDemo> {
     });
   }
 
+  decrement() async {
+    SharedPreferences sharedPre = await SharedPreferences.getInstance();
+    setState(() {
+      counter--;
+      sharedPre.setInt("count", counter);
+    });
+  }
+
   @override
   void initState() {
     loadcounter();
@@ -59,7 +67,9 @@ class _SharedPreferencesDemoState extends State<SharedPreferencesDemo> {
               ),
               SizedBox(width: 35.0),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  decrement();
+                },
                 child: Text("-"),
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
