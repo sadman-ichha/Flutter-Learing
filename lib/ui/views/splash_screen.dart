@@ -1,28 +1,21 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_pratice/TextForm_Validation/textform_validation.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import '../../TextForm_Validation/textform_validation.dart';
-
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    Future.delayed(
-        Duration(seconds: 3),
-        () => Navigator.push(
-            context, MaterialPageRoute(builder: (c) => TextFormValidation())));
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    Future.delayed(
+      Duration(seconds: 2),
+      () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (c) => TextFormValidation()),
+      ),
+    );
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -34,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Flutter Practice",
-                  style: TextStyle(fontSize: 35, color: Colors.white)),
+                  style: GoogleFonts.cookie(fontSize: 40, color: Colors.white)),
             ],
           ),
         ),
