@@ -12,9 +12,7 @@ class SplashScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         // crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-        
-        ],
+        children: [],
       ),
     );
   }
