@@ -2,11 +2,17 @@
 
 import 'package:flutter/material.dart';
 
+import '../../TextForm_Validation/textform_validation.dart';
+
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(
+        Duration(seconds: 3),
+        () => Navigator.push(
+            context, MaterialPageRoute(builder: (c) => TextFormValidation())));
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -18,7 +24,7 @@ class SplashScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Flutter Practice",
-                  style: TextStyle(fontSize: 50, color: Colors.white)),
+                  style: TextStyle(fontSize: 35, color: Colors.white)),
             ],
           ),
         ),
