@@ -4,15 +4,25 @@ import 'package:flutter/material.dart';
 
 import '../../TextForm_Validation/textform_validation.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
     Future.delayed(
         Duration(seconds: 3),
         () => Navigator.push(
             context, MaterialPageRoute(builder: (c) => TextFormValidation())));
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
