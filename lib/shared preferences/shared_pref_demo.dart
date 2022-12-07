@@ -29,11 +29,11 @@ class _SharedPreferencesDemoState extends State<SharedPreferencesDemo> {
 
   @override
   void initState() {
-    loadcounter();
+    loadCounter();
     super.initState();
   }
 
-  loadcounter() async {
+  loadCounter() async {
     SharedPreferences sharedPref = await SharedPreferences.getInstance();
     setState(() {
       counter = sharedPref.getInt("count") ?? 0;
@@ -43,6 +43,9 @@ class _SharedPreferencesDemoState extends State<SharedPreferencesDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          title: Text("Shared Preferences Demo",
+              style: Theme.of(context).textTheme.bodyMedium)),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
