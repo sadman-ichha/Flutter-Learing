@@ -44,6 +44,9 @@ class _SharedPreferencesDemoState extends State<SharedPreferencesDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          elevation: 5,
           title: Text("Shared Preferences Demo",
               style: Theme.of(context).textTheme.bodyMedium)),
       body: Column(
