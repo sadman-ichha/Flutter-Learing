@@ -11,7 +11,7 @@ class SharedPreferencesDemo extends StatefulWidget {
 class _SharedPreferencesDemoState extends State<SharedPreferencesDemo> {
   int counter = 0;
 
-  increment() async {
+ void increment() async {
     SharedPreferences sharedPre = await SharedPreferences.getInstance();
     setState(() {
       counter++;
